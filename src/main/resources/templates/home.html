@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Pizza Creed</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/4874d070ea.js"></script>
+    <!-- Favicons -->
+    <link rel="icon" th:href="@{/img/favicon.png}">
+    <link rel="apple-touch-icon" th:href="@{/img/apple-touch-icon.png}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <link href="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" >
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+     <link >
+
+    <style>
+
+            body {
+            background-image : url('https://images.pexels.com/photos/5056860/pexels-photo-5056860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+justify-content: center;
+
+
+            text-align: center;
+        }
+
+              header {
+            background: #3d3d3d;
+
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card
+        {
+
+        height :100%;
+
+        }
+
+
+        .card-footer {
+    background-color: #333;
+    color: white;
+}
+
+.card-body {
+
+    background-size: cover; /* Ensures the background image covers the entire card */
+    background-position: center; /* Centers the background image */
+    color: black; /* Set text color for better visibility */
+    animation: fadeInUp 1.5s ease-in-out; /* Add animation */
+}
+.card-body p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typewriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+
+        .card-header{
+
+        background-color :#333;
+        color: white
+        ;
+        }
+        .button-container {
+  /* Optional: Add styles to the container if needed */
+
+
+
+
+
+}
+
+.btn {
+  margin-right: 10px; /* Adjust the value as needed to add space between buttons */
+  background-color: #4CAF50; /* Green color */
+
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 40px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+
+
+
+
+       
+
+
+
+    </style>
+
+</head>
+<body style=" " class="body">
+<!-- ======= Header ======= -->
+<header class="fixed align-items-center" id="header">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+        <h1 class="logo me-auto me-lg-0"><a th:href="@{/home}">PIZZA CREED</a></h1>
+        <nav class="navbar order-last order-lg-0" id="navbar">
+            <ul>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+        <div class=" button-container">
+        <a class="btn btn-primary  " th:href="@{/product}">Admin</a>
+        <a class="btn btn-primary " th:href="@{/}">Logout</a>
+        </div>
+    </div>
+</header><!-- End Header -->
+<div style="color:Black " class="typewriter">
+    <h1 class=" py-3 text">
+        <a > WELCOME TO PIZZA CREED !
+        </a>
+    </h1>
+
+
+</div>
+
+
+<div class="container justify-content-center" style="color:black;">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center ">
+
+
+
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <p class="animate-charcter"> Explore our taste World!!</p>
+
+                </div>
+                <div class="card-body">
+
+
+                    <p class="card-text">Welcome to Pizza Creed, where taste meets perfection. Indulge in a culinary journey of flavors, carefully crafted with the finest ingredients.
+
+                        Our pizzas are a celebration of taste and tradition. From classic favorites to innovative creations, each bite is a symphony of flavors that will leave you craving for more.
+
+                        Join us in exploring a world of gastronomic delight. Discover the essence of true pizza craftsmanship and elevate your dining experience with Pizza Creed.</p>
+
+
+                </div>
+                <div class="card-footer text-body-secondary">
+                    <a class="btn btn-primary" th:href="@{/product}">Explore</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div id="preloader"></div>
+<a class="back-to-top d-flex align-items-center justify-content-center" href="#"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>
